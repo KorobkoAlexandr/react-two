@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
-let devtools = NODE_ENV === 'development' ? 'eval' : false;
+// let devtools = NODE_ENV === 'development' ? 'inline-source-map' : false;
 
 module.exports = {
     entry:
@@ -18,7 +18,7 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devtool: devtools,
+    devtool: 'eval',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
